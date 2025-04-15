@@ -1,6 +1,5 @@
 # Dating Apps
 
----
 O arquivo `control-keyboard.py` tem como objetivo automatizar os likes nos apps `Bumble` e `Tinder`.
 
 No `Bumble` ele irá pressionar a tecla `seta para direita`, portanto basta executar o `control-keyboard.py`, alternar para o navegador com o `Bumble` aberto e aguardar o início da execução.
@@ -11,7 +10,6 @@ No `Tinder` ele irá pressionar a tecla `enter`, portanto basta executar o `cont
 
 ## Parâmetros
 
----
 Para configurar a execução, ajuste as variáveis abaixo, presentes no final do `control-keyboard.py`:
 
 1. **likes**
@@ -34,7 +32,6 @@ app = "bumble"  # tinder / bumble
 
 ## Métricas
 
----
 O `control-keyboard.py` foi configurado com `sleep(0.8)`, foi o melhor valor encontrado, menos que isso não otimizava a velocidade pois não dava tempo do site interpretar.
 
 Com isso, alcancamos as seguintes métricas:
@@ -45,7 +42,6 @@ Com isso, alcancamos as seguintes métricas:
 
 # Exemplo de Logging
 
----
 ```txt
 15/04/2025 19:32:52 - ----------------------------------------------------------------------
 15/04/2025 19:32:52 - Iniciando Likes no bumble
