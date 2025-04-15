@@ -34,7 +34,7 @@ app = "bumble"  # tinder / bumble
 
 O `control-keyboard.py` foi configurado com `sleep(0.8)`, foi o melhor valor encontrado, menos que isso não otimizava a velocidade pois não dava tempo do site interpretar.
 
-Com isso, alcancamos as seguintes métricas:
+Com isso, alcançamos as seguintes métricas:
 
 - 1 min = 75 likes
 - 10 min = 750 likes
