@@ -40,7 +40,7 @@ Com isso, alcançamos as seguintes métricas:
 - 10 min = 750 likes
 - 1 h = 4.500 likes
 
-# Exemplo de Logging
+## Exemplo de Logging
 
 ```txt
 15/04/2025 19:32:52 - ----------------------------------------------------------------------
