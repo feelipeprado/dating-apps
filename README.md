@@ -42,6 +42,8 @@ Com isso, alcançamos as seguintes métricas:
 
 ## Exemplo de Logging
 
+Segue abaixo exemplo de logging gerado por uma execução do `control-keyboard.py`:
+
 ```txt
 15/04/2025 19:32:52 - ----------------------------------------------------------------------
 15/04/2025 19:32:52 - Iniciando Likes no bumble
