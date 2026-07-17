@@ -22,6 +22,10 @@ def main(likes, likes_por_rodada, coldstart, app):
     print_log(f"Iniciando Likes no {app}")
     print_log(70 * "-")
     data_hora_inicio = datetime.now()
+
+    if likes_por_rodada <= 0:
+        raise ValueError(f"likes_por_rodada deve ser maior que zero, recebido: {likes_por_rodada}")
+
     rodadas = int(likes / likes_por_rodada)
     print_log(f"Serão feitas {rodadas} rodadas de {likes_por_rodada} likes, totalizando {likes} likes")
 
@@ -32,7 +36,7 @@ def main(likes, likes_por_rodada, coldstart, app):
         print_log("Abra o Bumble e clique em qualquer lugar da tela para se preparar...")
         button = 'right'
     else:
-        print_log(f"App {app} não configurado...")
+        raise ValueError(f"App {app} não configurado, escolha 'tinder' ou 'bumble'")
 
     print_log(f"Inicio em {coldstart} segundos", end='')
     for seconds in range(1, coldstart):
@@ -51,9 +55,14 @@ def main(likes, likes_por_rodada, coldstart, app):
         cont = 1
         while cont <= likes_por_rodada:
             print(str(cont)[-1], end='')
-            keyboard.send(button)
-            sleep(0.8)
-            keyboard.send("esc")
+            try:
+                keyboard.send(button)
+                sleep(0.8)
+                keyboard.send("esc")
+            except Exception as erro:
+                print("")
+                print_log(f"Erro ao enviar tecla na rodada {cont_rodada}, like {cont}: {erro}")
+                raise
             cont += 1
         cont_rodada += 1
     print("")
@@ -66,7 +75,14 @@ likes = 4500
 likes_por_rodada = 10
 coldstart = 10 # segundos para iniciar os likes
 app = "bumble"  # tinder / bumble
-main(likes, likes_por_rodada, coldstart, app)
+
+if __name__ == "__main__":
+    try:
+        main(likes, likes_por_rodada, coldstart, app)
+    except Exception as erro:
+        print("")
+        print_log(f"Execução interrompida por erro: {erro}")
+        raise
 
 # 1 min = 75 likes
 # 10 min = 750 likes
