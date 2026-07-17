@@ -62,11 +62,12 @@ def main(likes, likes_por_rodada, coldstart, app):
     print_log(70 * "-")
 
 
-likes = 4500
-likes_por_rodada = 10
-coldstart = 10 # segundos para iniciar os likes
-app = "bumble"  # tinder / bumble
-main(likes, likes_por_rodada, coldstart, app)
+if __name__ == "__main__":
+    likes = 4500
+    likes_por_rodada = 10
+    coldstart = 10 # segundos para iniciar os likes
+    app = "bumble"  # tinder / bumble
+    main(likes, likes_por_rodada, coldstart, app)
 
 # 1 min = 75 likes
 # 10 min = 750 likes
