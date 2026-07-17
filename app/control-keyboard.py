@@ -18,6 +18,18 @@ def calculaTempoExecucao(data_hora_inicio):
 
 
 def main(likes, likes_por_rodada, coldstart, app):
+    if app == 'tinder':
+        button = 'enter'
+    elif app == 'bumble':
+        button = 'right'
+    else:
+        raise ValueError(f"App '{app}' não configurado. Escolha 'tinder' ou 'bumble'.")
+
+    if likes <= 0 or likes_por_rodada <= 0:
+        raise ValueError("likes e likes_por_rodada devem ser inteiros positivos.")
+    if coldstart < 0:
+        raise ValueError("coldstart deve ser maior ou igual a zero.")
+
     print_log(70 * "-")
     print_log(f"Iniciando Likes no {app}")
     print_log(70 * "-")
@@ -27,12 +39,8 @@ def main(likes, likes_por_rodada, coldstart, app):
 
     if app == 'tinder':
         print_log("Abra o Tinder, dê o primeiro like manualmente para se preparar...")
-        button = 'enter'
     elif app == 'bumble':
         print_log("Abra o Bumble e clique em qualquer lugar da tela para se preparar...")
-        button = 'right'
-    else:
-        print_log(f"App {app} não configurado...")
 
     print_log(f"Inicio em {coldstart} segundos", end='')
     for seconds in range(1, coldstart):
